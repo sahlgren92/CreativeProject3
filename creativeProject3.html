@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="app.js"></script>
+<title>My to-do list</title>
+</head>
+
+<body>
+<div ng-app='app' ng-controller='mainCtrl'>
+  <h1>Create a prioritized to-do list!</h1>
+    <form name='taskForm' ng-submit="addCriticalTask(taskForm)">
+      <input placeholder='Task' ng-model='taskForm.name'/>
+      <select ng-model="taskForm.priority" ng-options="x for x in priorities"></select>
+      <button type='submit'>Add New Task</button>
+    </form>
+    <ul class='Critical-task-List'>
+      <li ng-repeat='task in criticalTasks'>
+        <task />
+      </li>
+    </ul>
+    <ul class='High-task-list'>
+      <li ng-repeat='task in highTasks'>
+        <task />
+      </li>
+    </ul>
+    <ul class='Medium-task-list'>
+      <li ng-repeat='task in mediumTasks'>
+        <task />
+      </li>
+    </ul>
+    <ul class='Low-task-list'>
+      <li ng-repeat='task in lowTasks'>
+        <task />
+      </li>
+    </ul>
+    <ul class='Unimportant-task-list'>
+      <li ng-repeat='task in unimportantTasks'>
+        <task />
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
