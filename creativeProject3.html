@@ -9,6 +9,7 @@
 <body>
 <div ng-app='app' ng-controller='mainCtrl'>
   <h1>Create a prioritized to-do list!</h1>
+  <p>The sorting currently doesn't work as intended, couldn't fix it in time :(<p>
     <form name='taskForm' ng-submit="addCriticalTask(taskForm)">
       <input placeholder='Task' ng-model='taskForm.name'/>
       <select ng-model="taskForm.priority" ng-options="x for x in priorities"></select>
